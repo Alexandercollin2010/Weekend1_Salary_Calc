@@ -1,7 +1,7 @@
 var employee = [];
 var totalSalary= [];
 
-var addEmplopyee = function( firstName, lastName, idNumber, jobTitle, annualSallary){
+var addEmployee = function( firstName, lastName, idNumber, jobTitle, annualSallary){
 
   var newEmployee = {
     firstName: firstName,
@@ -12,7 +12,7 @@ var addEmplopyee = function( firstName, lastName, idNumber, jobTitle, annualSall
   };
 
   employee.push( newEmployee);
-}; 
+};
 
 var getEmployee = function(){
   // get Employee Input
@@ -26,13 +26,22 @@ var getEmployee = function(){
       console.log( 'Job Title:', title );
   var salary = document.getElementById( 'Annual Salary' ).value;
       console.log( 'Annual Salary:', salary);
-      totalSalary.push(salary);
+  var infoArray = [nameOne, nameTwo, number, title, salary];
+  totalSalary.push(infoArray);
 
   addEmployee( nameOne, nameTwo, number, title, salary);
-  document.getElementById( 'name one' ).innerHTML = 'First Name: ' + nameOne ;
-  document.getElementById( 'name two' ).innerHTML = 'Last Name: ' + nameTwo ;
-  document.getElementById( 'number' ).innerHTML = 'ID Number: ' + number ;
-  document.getElementById( 'title' ).innerHTML = 'Job Title: ' + title ;
-  document.getElementById( 'salary' ).innerHTML = 'Annual Salary: ' + salary ;
-  document.getElementById( 'total salary' ).innerHTML = 'Total Month Salary: ' + totalSalary ;
+  document.getElementById( 'name one' ).innerHTML = ('First Name: ' + nameOne) ;
+  document.getElementById( 'name two' ).innerHTML = ('Last Name: ' + nameTwo) ;
+  document.getElementById( 'number' ).innerHTML = ('ID Number: ' + number);
+  document.getElementById( 'title' ).innerHTML = ('Job Title: ' + title) ;
+  document.getElementById( 'salary' ).innerHTML = ('Annual Salary: ' + salary);
+  document.getElementById( 'total salary' ).innerHTML = ('Total Month Salary: ' + salaryByMonth()) ;
+};
+
+var salaryByMonth = function () {
+  var startingSalary = 0;
+  for (var i = 0; i < totalSalary.length; i++) {
+    startingSalary += Number(totalSalary[i][4]);
+  }
+  return startingSalary / 12;
 };
