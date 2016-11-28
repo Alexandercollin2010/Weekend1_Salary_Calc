@@ -28,6 +28,11 @@ var getEmployee = function(){
       console.log( 'Annual Salary:', salary);
   var infoArray = [nameOne, nameTwo, number, title, salary];
   totalSalary.push(infoArray);
+  document.getElementById( 'First Name' ).value = "";
+  document.getElementById( 'Last Name' ).value = "";
+  document.getElementById( 'ID Number' ).value = "";
+  document.getElementById( 'Job Title' ).value = "";
+  document.getElementById( 'Annual Salary' ).value = "";
 
   addEmployee( nameOne, nameTwo, number, title, salary);
   document.getElementById( 'name one' ).innerHTML = ('First Name: ' + nameOne) ;
