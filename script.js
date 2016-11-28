@@ -15,7 +15,7 @@ var addEmployee = function( firstName, lastName, idNumber, jobTitle, annualSalla
 };
 
 var getEmployee = function(){
-  // get Employee Input
+  // retrieving all the employee info
   var nameOne = document.getElementById( 'First Name' ).value;
       console.log( 'First Name:', nameOne );
   var nameTwo = document.getElementById( 'Last Name' ).value;
@@ -26,15 +26,18 @@ var getEmployee = function(){
       console.log( 'Job Title:', title );
   var salary = document.getElementById( 'Annual Salary' ).value;
       console.log( 'Annual Salary:', salary);
+  // collecting all the employee info
   var infoArray = [nameOne, nameTwo, number, title, salary];
   totalSalary.push(infoArray);
+  // Reseting my input boxes
   document.getElementById( 'First Name' ).value = "";
   document.getElementById( 'Last Name' ).value = "";
   document.getElementById( 'ID Number' ).value = "";
   document.getElementById( 'Job Title' ).value = "";
   document.getElementById( 'Annual Salary' ).value = "";
-
+  // sending to the addEmployee function 
   addEmployee( nameOne, nameTwo, number, title, salary);
+  // recording on the DOM
   document.getElementById( 'name one' ).innerHTML = ('First Name: ' + nameOne) ;
   document.getElementById( 'name two' ).innerHTML = ('Last Name: ' + nameTwo) ;
   document.getElementById( 'number' ).innerHTML = ('ID Number: ' + number);
@@ -42,7 +45,7 @@ var getEmployee = function(){
   document.getElementById( 'salary' ).innerHTML = ('Annual Salary: ' + salary);
   document.getElementById( 'total salary' ).innerHTML = ('Total Month Salary: ' + salaryByMonth()) ;
 };
-
+// calculating the monthly salary as a new employee is entered
 var salaryByMonth = function () {
   var startingSalary = 0;
   for (var i = 0; i < totalSalary.length; i++) {
