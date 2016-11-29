@@ -35,7 +35,7 @@ var getEmployee = function(){
   document.getElementById( 'ID Number' ).value = "";
   document.getElementById( 'Job Title' ).value = "";
   document.getElementById( 'Annual Salary' ).value = "";
-  // sending to the addEmployee function 
+  // sending to the addEmployee function
   addEmployee( nameOne, nameTwo, number, title, salary);
   // recording on the DOM
   document.getElementById( 'name one' ).innerHTML = ('First Name: ' + nameOne) ;
@@ -52,4 +52,8 @@ var salaryByMonth = function () {
     startingSalary += Number(totalSalary[i][4]);
   }
   return startingSalary / 12;
+};
+
+var deleteButton = function () {
+  
 };
